@@ -1,4 +1,5 @@
 const data = [
+    {imgsrc: 'image/p1.jpeg',features: ['Drag Headshot','One Time Apply','Unable To By(By Checking)','Fully AI Control','100% No Ban Issue(Even Patch)','Android & IOS']},
     { imgsrc: 'image/p1.jpeg', features: ['High-speed Processor', 'Long Battery Life', 'Sleek Design', 'High-Resolution Display', 'Water Resistant', 'Wireless Charging'] },
     { imgsrc: 'image/p2.jpeg', features: ['Advanced Camera System', 'Fast Charging', 'AI Integration', 'Multi-Touch Screen', 'Biometric Security', 'Expandable Storage'] },
     { imgsrc: 'image/p1.jpeg', features: ['Noise Cancellation', 'Bluetooth Connectivity', 'Ergonomic Fit', 'Sweat Resistant', 'Customizable Sound', 'Voice Assistant'] },
@@ -88,6 +89,7 @@ const url="https://api.whatsapp.com/send?phone=6369133041&text="+encodeURICompon
             const button=document.createElement('div')
             button.classList='btn_cont'
             const link=document.createElement('a')
+            link.href=url;
             link.textContent='Buy Now'
             link.classList='btn'
  

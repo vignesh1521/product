@@ -87,6 +87,7 @@ const url="https://api.whatsapp.com/send?phone=6369133041&text="+encodeURICompon
             const button=document.createElement('div')
             button.classList='btn_cont'
             const link=document.createElement('a')
+            link.href=url
             link.textContent='Buy Now'
             link.classList='btn'
  
