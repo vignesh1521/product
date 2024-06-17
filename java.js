@@ -1,5 +1,5 @@
 const data = [
-    {imgsrc: 'image/p1.jpeg',features: ['Drag Headshot','One Time Apply','Unable To By(By Checking)','Fully AI Control','100% No Ban Issue(Even Patch)','Android & IOS']},
+    { imgsrc: 'image/p1.jpeg',features: ['Drag Headshot','One Time Apply','Unable To By(By Checking)','Fully AI Control','100% No Ban Issue(Even Patch)','Android & IOS']},
     { imgsrc: 'image/p1.jpeg', features: ['High-speed Processor', 'Long Battery Life', 'Sleek Design', 'High-Resolution Display', 'Water Resistant', 'Wireless Charging'] },
     { imgsrc: 'image/p2.jpeg', features: ['Advanced Camera System', 'Fast Charging', 'AI Integration', 'Multi-Touch Screen', 'Biometric Security', 'Expandable Storage'] },
     { imgsrc: 'image/p1.jpeg', features: ['Noise Cancellation', 'Bluetooth Connectivity', 'Ergonomic Fit', 'Sweat Resistant', 'Customizable Sound', 'Voice Assistant'] },
@@ -61,43 +61,41 @@ I Need a Product From You👇
 *Link* : ${window.location.hostname+'/product/'+src}
 `	
 const url="https://api.whatsapp.com/send?phone=9345916715&text="+encodeURIComponent(details)
-	
             const productDiv = document.createElement('div');
             productDiv.classList.add('product');
             productDiv.classList.add('hidden');
-
-
             const imageDiv = document.createElement('div');
             imageDiv.classList.add('image');
             const img = document.createElement('img');
             img.src = src;
             imageDiv.appendChild(img);
-
             const featuresList = document.createElement('li');
             featuresList.classList.add('features');
             featuresList.textContent = 'Features:';
-           
-
-
             featureTexts.forEach(text => {
                 const p = document.createElement('p');
                 p.textContent = text;
                 featuresList.appendChild(p);
             });
-
             const button=document.createElement('div')
             button.classList='btn_cont'
             const link=document.createElement('a')
             link.href=url;
             link.textContent='Buy Now'
             link.classList='btn'
- 
             button.appendChild(link)
+
+            const span_con=document.createElement('div')
+            span_con.classList='span_con'
+            const span=document.createElement('span')
+            span.textContent='Mod Preview'
+            span_con.appendChild(span)
+
 
             productDiv.appendChild(imageDiv);
             productDiv.appendChild(featuresList);
+            productDiv.appendChild(span_con)
             productDiv.appendChild(button);
-
             const container = document.querySelector('.pro_container');
             container.appendChild(productDiv);
         }
