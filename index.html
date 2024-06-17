@@ -4,8 +4,24 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<script defer type="text/javascript" src="java.js"></script>
+
+
+	<script type="text/javascript">
+		const timestamp = new Date().getTime();
+const metaElement = document.createElement('link');
+metaElement.setAttribute('rel', 'stylesheet');
+metaElement.setAttribute('type', 'text/css');
+metaElement.setAttribute('href', `style.css?v=${timestamp}`);
+
+const script_tag=document.createElement('script');
+script_tag.setAttribute('defer','')
+script_tag.setAttribute('type','text/javascript')
+script_tag.setAttribute('src','java.js')
+
+const headElement = document.querySelector('head');
+headElement.appendChild(script_tag);
+headElement.appendChild(metaElement);
+	</script>
 </head>
 <body>
 <div class="body"></div>
