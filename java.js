@@ -50,6 +50,18 @@ const data = [
 
  
 function addProduct(src,featureTexts) {
+	
+	const details=`
+Hi,
+I Need a Product From You👇
+*Product Details:*
+ο ${featureTexts.join('\nο ')}
+
+*Link* : ${window.location+src}
+`	
+const url="https://api.whatsapp.com/send?phone=6369133041&text="+encodeURIComponent(details)
+	console.log(url)
+
             const productDiv = document.createElement('div');
             productDiv.classList.add('product');
             productDiv.classList.add('hidden');
@@ -78,7 +90,7 @@ function addProduct(src,featureTexts) {
             const link=document.createElement('a')
             link.textContent='Buy Now'
             link.classList='btn'
-
+ 
             button.appendChild(link)
 
             productDiv.appendChild(imageDiv);
@@ -90,6 +102,7 @@ function addProduct(src,featureTexts) {
         }
 
 data.map(items=>addProduct(items.imgsrc,items.features))
+
 let observer;
 try{
  observer =new IntersectionObserver((entries)=>{

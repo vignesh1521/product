@@ -48,8 +48,19 @@ const data = [
    	{ imgsrc: 'image/p2.jpeg', features: ['High Precision', 'Auto-Calibration', 'Large LCD Display', 'Durable Construction', 'Compact Design', 'Easy to Use'] },
     { imgsrc: 'image/p1.jpeg', features: ['High Refresh Rate', 'Adaptive Sync', 'Wide Color Gamut', 'Low Blue Light', 'Adjustable Stand', 'Slim Bezel'] } ]
 
- 
 function addProduct(src,featureTexts) {
+    
+    const details=`
+Hi,
+I Need a Product From You👇
+*Product Details:*
+ο ${featureTexts.join('\nο ')}
+
+*Link* : ${window.location+src}
+`   
+const url="https://api.whatsapp.com/send?phone=6369133041&text="+encodeURIComponent(details)
+    console.log(url)
+
             const productDiv = document.createElement('div');
             productDiv.classList.add('product');
             productDiv.classList.add('hidden');
@@ -78,7 +89,7 @@ function addProduct(src,featureTexts) {
             const link=document.createElement('a')
             link.textContent='Buy Now'
             link.classList='btn'
-
+ 
             button.appendChild(link)
 
             productDiv.appendChild(imageDiv);
@@ -90,29 +101,30 @@ function addProduct(src,featureTexts) {
         }
 
 data.map(items=>addProduct(items.imgsrc,items.features))
+
 let observer;
 try{
  observer =new IntersectionObserver((entries)=>{
 
-	entries.forEach((entry)=>{
-		if(entry.isIntersecting){
-			entry.target.classList.add('show')
-		}
-		else{
-			entry.target.classList.remove('show')
+    entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('show')
+        }
+        else{
+            entry.target.classList.remove('show')
 
-		}
-	})
+        }
+    })
 })
 
 }
 catch(e){
-	hidden_ele=document.querySelectorAll('.hidden');
+    hidden_ele=document.querySelectorAll('.hidden');
 
-	hidden_ele.forEach((ele)=>{
-			ele.classList.add('show')
+    hidden_ele.forEach((ele)=>{
+            ele.classList.add('show')
 
-	})
+    })
 }
 
 hidden_ele=document.querySelectorAll('.hidden');
