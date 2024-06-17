@@ -73,24 +73,47 @@ function addProduct(src,featureTexts) {
                 featuresList.appendChild(p);
             });
 
+            const button=document.createElement('div')
+            button.classList='btn_cont'
+            const link=document.createElement('a')
+            link.textContent='Buy Now'
+            link.classList='btn'
+
+            button.appendChild(link)
+
             productDiv.appendChild(imageDiv);
             productDiv.appendChild(featuresList);
+            productDiv.appendChild(button);
 
             const container = document.querySelector('.pro_container');
             container.appendChild(productDiv);
         }
 
 data.map(items=>addProduct(items.imgsrc,items.features))
-
-
-const observer =new IntersectionObserver((entries)=>{
+let observer;
+try{
+ observer =new IntersectionObserver((entries)=>{
 
 	entries.forEach((entry)=>{
 		if(entry.isIntersecting){
 			entry.target.classList.add('show')
 		}
+		else{
+			entry.target.classList.remove('show')
+
+		}
 	})
 })
+
+}
+catch(e){
+	hidden_ele=document.querySelectorAll('.hidden');
+
+	hidden_ele.forEach((ele)=>{
+			ele.classList.add('show')
+
+	})
+}
 
 hidden_ele=document.querySelectorAll('.hidden');
 hidden_ele.forEach(el=>observer.observe(el))
