@@ -56,9 +56,9 @@ I Need a Product From You👇
 *Product Details:*
 ο ${featureTexts.join('\nο ')}
 
-*Link* : ${window.location+src}
+*Link* : ${window.location+'/'+src}
 `   
-const url="https://api.whatsapp.com/send?phone=6369133041&text="+encodeURIComponent(details)
+const url="https://api.whatsapp.com/send?phone=9345916715&text="+encodeURIComponent(details)
     console.log(url)
 
             const productDiv = document.createElement('div');
