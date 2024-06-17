@@ -1,12 +1,12 @@
 const data = [
-    { imgsrc: 'image/p1.jpeg',features: ['Drag Headshot','One Time Apply','Unable To By(By Checking)','Fully AI Control','100% No Ban Issue(Even Patch)','Android & IOS']},
-    { imgsrc: 'image/p1.jpeg', features: ['High-speed Processor', 'Long Battery Life', 'Sleek Design', 'High-Resolution Display', 'Water Resistant', 'Wireless Charging'] },
-    { imgsrc: 'image/p2.jpeg', features: ['Advanced Camera System', 'Fast Charging', 'AI Integration', 'Multi-Touch Screen', 'Biometric Security', 'Expandable Storage'] },
-    { imgsrc: 'image/p1.jpeg', features: ['Noise Cancellation', 'Bluetooth Connectivity', 'Ergonomic Fit', 'Sweat Resistant', 'Customizable Sound', 'Voice Assistant'] },
-    { imgsrc: 'image/p2.jpeg', features: ['Ultra HD Display', 'Surround Sound', 'Smart Home Integration', 'Energy Efficient', 'Multiple HDMI Ports', 'Remote Control'] },
-    { imgsrc: 'image/p1.jpeg', features: ['Lightweight Frame', 'High Durability', 'UV Protection', 'Scratch Resistant', 'Adjustable Fit', 'Stylish Design'] },
-    { imgsrc: 'image/p2.jpeg', features: ['4K Video Recording', 'Image Stabilization', 'Wide-Angle Lens', 'High ISO Range', 'Fast Autofocus', 'Weather Sealed'] },
-    { imgsrc: 'image/p1.jpeg', features: ['Fast Boot Time', 'Large Storage Capacity', 'High RAM', 'VR Ready', 'Customizable RGB Lighting', 'Advanced Cooling System'] },
+    { imgsrc: 'image/p1.jpeg',Video:'mode_view.mp4',features: ['Drag Headshot','One Time Apply','Unable To By(By Checking)','Fully AI Control','100% No Ban Issue(Even Patch)','Android & IOS']},
+    { imgsrc: 'image/p1.jpeg',Video:'mode_view.mp4', features: ['High-speed Processor', 'Long Battery Life', 'Sleek Design', 'High-Resolution Display', 'Water Resistant', 'Wireless Charging'] },
+    { imgsrc: 'image/p2.jpeg',Video:'mode_view.mp4', features: ['Advanced Camera System', 'Fast Charging', 'AI Integration', 'Multi-Touch Screen', 'Biometric Security', 'Expandable Storage'] },
+    { imgsrc: 'image/p1.jpeg',Video:'mode_view.mp4',features: ['Noise Cancellation', 'Bluetooth Connectivity', 'Ergonomic Fit', 'Sweat Resistant', 'Customizable Sound', 'Voice Assistant'] },
+    { imgsrc: 'image/p2.jpeg',Video:'mode_view.mp4', features: ['Ultra HD Display', 'Surround Sound', 'Smart Home Integration', 'Energy Efficient', 'Multiple HDMI Ports', 'Remote Control'] },
+    { imgsrc: 'image/p1.jpeg',Video:'mode_view.mp4', features: ['Lightweight Frame', 'High Durability', 'UV Protection', 'Scratch Resistant', 'Adjustable Fit', 'Stylish Design'] },
+    { imgsrc: 'image/p2.jpeg',Video:'mode_view.mp4', features: ['4K Video Recording', 'Image Stabilization', 'Wide-Angle Lens', 'High ISO Range', 'Fast Autofocus', 'Weather Sealed'] },
+    { imgsrc: 'image/p1.jpeg',Video:'mode_view.mp4', features: ['Fast Boot Time', 'Large Storage Capacity', 'High RAM', 'VR Ready', 'Customizable RGB Lighting', 'Advanced Cooling System'] },
     { imgsrc: 'image/p2.jpeg', features: ['High-Resolution Audio', 'Long Battery Life', 'Comfortable Ear Cushions', 'Foldable Design', 'Built-in Microphone', 'Multi-Device Pairing'] },
     { imgsrc: 'image/p1.jpeg', features: ['Smart Navigation', 'Automatic Cleaning', 'Obstacle Detection', 'Voice Control', 'Long Battery Life', 'Self-Charging'] },
     { imgsrc: 'image/p2.jpeg', features: ['Fast Data Transfer', 'Compact Design', 'High Capacity', 'Durable Construction', 'USB-C Interface', 'Password Protection'] },
@@ -50,7 +50,7 @@ const data = [
     { imgsrc: 'image/p1.jpeg', features: ['High Refresh Rate', 'Adaptive Sync', 'Wide Color Gamut', 'Low Blue Light', 'Adjustable Stand', 'Slim Bezel'] } ]
 
  
-function addProduct(src,featureTexts) {
+function addProduct(src,featureTexts,Video) {
 	
 	const details=`
 Hi,
@@ -87,7 +87,8 @@ const url="https://api.whatsapp.com/send?phone=9345916715&text="+encodeURICompon
 
             const span_con=document.createElement('div')
             span_con.classList='span_con'
-            const span=document.createElement('span')
+            const span=document.createElement('a')
+            span.href=window.location.hostname+'/product/'+Video
             span.textContent='Mod Preview'
             span_con.appendChild(span)
 
@@ -100,7 +101,7 @@ const url="https://api.whatsapp.com/send?phone=9345916715&text="+encodeURICompon
             container.appendChild(productDiv);
         }
 
-data.map(items=>addProduct(items.imgsrc,items.features))
+data.map(items=>addProduct(items.imgsrc,items.features,items.Video))
 
 let observer;
 try{
