@@ -6,23 +6,32 @@ background-image: linear-gradient(to right, #434343 0%, black 100%);
 }
 
 .img img{
+	position: relative;
+	top: 10px;
+	left: 10px;
   width: 50px;
   height: 50px;
   object-fit: cover;
-  border-radius:100% 
-}
+  border-radius:100%;
+box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.3), 0 6px 20px 0 rgba(255, 255, 255, 0.25);
 
-.menu a{
-	text-decoration: none;
-	border:1px solid black;
-	padding: 10px
 }
 .menu{
 	position: relative;
-  
   float: right;
-  top: 15px;
-  right: 10px
+  top: 25px;
+  right: 15px
+}
+.menu a{
+	color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+	text-decoration: none;
+	padding: 10px
+}
+.menu .active{
+	color: #ff8f00;
 }
 .pro_container{
 
