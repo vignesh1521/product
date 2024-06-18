@@ -1,5 +1,5 @@
 const data = [
-    { imgsrc: 'image/p1.jpeg',Video:'video/mod_view.mp4',features: ['Drag Headshot','One Time Apply','Unable To By(By Checking)','Fully AI Control','100% No Ban Issue(Even Patch)','Android & IOS']},
+    { imgsrc: 'image/p1.jpeg',Video:'https://live.staticflickr.com/video/53798827688/2b397ffe2a/720p.mp4?s=eyJpIjo1Mzc5ODgyNzY4OCwiZSI6MTcxODY3MTMwMiwicyI6IjMwMjY0ODcxODM1ZjcwMWEwM2RmYjFhNjZiNmFjMmExMmZiMzhjNTkiLCJ2IjoxfQ',features: ['Drag Headshot','One Time Apply','Unable To By(By Checking)','Fully AI Control','100% No Ban Issue(Even Patch)','Android & IOS']},
     { imgsrc: 'image/p1.jpeg',Video:'video/mod_view.mp4', features: ['High-speed Processor', 'Long Battery Life', 'Sleek Design', 'High-Resolution Display', 'Water Resistant', 'Wireless Charging'] },
     { imgsrc: 'image/p2.jpeg',Video:'video/mod_view.mp4', features: ['Advanced Camera System', 'Fast Charging', 'AI Integration', 'Multi-Touch Screen', 'Biometric Security', 'Expandable Storage'] },
     { imgsrc: 'image/p1.jpeg',Video:'video/mod_view.mp4',features: ['Noise Cancellation', 'Bluetooth Connectivity', 'Ergonomic Fit', 'Sweat Resistant', 'Customizable Sound', 'Voice Assistant'] },
